@@ -1,0 +1,98 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    主页
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <br>
+            <form method="post" action="{% url 'app:douploadTrainForm' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group col-form-label-lg" >
+                    上传训练文件：<input type="file" name="uploadTrainFile1" id="uploadTrainFile1">
+                </div>
+                <div class="form-group col-form-label-lg" >
+                    上传训练文件：<input type="file" name="uploadTrainFile2" id="uploadTrainFile2">
+                    <button type="submit" class="btn-primary"><i class="fa fa-paper-plane"></i>上传并训练模型</button>
+                    <a href="{% url 'app:downloadModel1' %}" >下载模型文件1</a>
+                    <a href="{% url 'app:downloadModel2' %}" >下载模型文件2</a>
+                </div>
+            </form>
+            <br>
+            <form method="post" action="{% url 'app:douploadTestForm' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group col-form-label-lg" >
+                    上传测试文件：<input type="file" name="uploadTestFile" id="uploadTestFile">
+                    <button type="submit" class="btn-primary"><i class="fa fa-paper-plane"></i>上传并开始测试</button>
+                    <a href="{% url 'app:downloadTestResult' %}" >下载测试结果</a>
+                </div>
+            </form>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="row col-12">
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-primary">训练结果</a>
+            </div>
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+                <a href="#" class="btn btn-primary">测试结果</a>
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>
+        <div class="row col-12" >
+            <div class="col-sm-4">
+                <div id="pie1" style="width: 1000px;height:500px;">
+                    {% if test_score1%}
+                    {% if F1_Score1%}
+                    {% if total%}
+                    <pre><h5>{{test_score1}}</h5></pre>
+                    <pre><h5>validate set F1:{{F1_Score1}}</h5></pre>
+                    <pre><h5>Model size: {{total}} bytes</h5></pre>
+                    {% endif%}
+                    {% endif%}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-sm-4">
+            </div>
+            <div class="col-sm-4">
+                <div id="pie" style="width: 500px;height:400px;"></div>
+            </div>
+            <div class="col-sm-4">
+            </div>
+        </div>
+        <script type="text/javascript">
+            // 初始化 echarts 实例
+            var myChart = echarts.init(document.getElementById('pie'));
+            myChart.setOption({
+                tooltip:{
+                    trigger:"item",
+
+                },
+                series : [{
+                        name: '测试结果',
+                        type: 'pie',    // 设置图表类型为饼图
+                        radius: '55%',  // 饼图的半径，外半径为可视区尺寸（容器高宽中较小一项）的 55% 长度。
+                        data:{{data|safe}},
+                        label:{
+                            show:true,
+                            formatter:'{b}:{c}({d}%)',
+                        }
+                }]
+            })
+        </script>
+    </div>
+</div>
+{% endblock content %}

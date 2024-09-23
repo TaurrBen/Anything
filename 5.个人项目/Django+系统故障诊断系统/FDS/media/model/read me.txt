@@ -1,0 +1,5 @@
+最终能出结果的只有跟final.py有关
+其他.py文件只是我的测试过程
+最终结果保存在final_model_data.json里面
+最终模型分为两个，分别是final_xgboost_clf.pkl和final_xgboost_clf_2.pkl
+最终结果的可视化图片是bar_chart.png
