@@ -12,11 +12,11 @@
 
 可利用市场现有等离子切割机，完成对管道结构件进行切割，要求开发出一种利用旋转驱动装置，并依靠现有成品模块或直线驱动装置，实现各种管径（管径不大于300mm）的相贯线切割，要求CAD图、三维图和样机表达。
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\msohtmlclip1\01\clip_image002.png)
+![img](asset/clip_image002.png)
 
  
 
-![img](file:///C:\Users\ADMINI~1\AppData\Local\Temp\msohtmlclip1\01\clip_image004.png)
+![img](asset/clip_image004.png)
 
 ## 方案
 
@@ -28,6 +28,6 @@
 
   <p align="center">
       <video width="320" height="240" controls>
-    		<source  src="简易型等离子切割系统.mp4" type="video/mp4"/>
+    		<source  src="./简易型等离子切割系统.mp4" type="video/mp4"/>
   	</video>
   </p>
