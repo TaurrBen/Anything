@@ -1,0 +1,17 @@
+"D:\IAR\arm\bin\armproc.dll" 
+
+"D:\IAR\arm\bin\armjlink2.dll" 
+
+"F:\比赛\7.7一个圆环待处理，避障未丢线\Prj\IAR\DZ10_Debug\Exe\vcan_Kinetis.out" 
+
+--plugin "D:\IAR\arm\bin\armbat.dll" 
+
+--device_macro "D:\IAR\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro "D:\IAR\arm\config\debugger\NXP\Kxx_Trace.dmac" 
+
+--flash_loader "D:\IAR\arm\config\flashloader\NXP\FlashK60Dxxx128K.board" 
+
+
+
+

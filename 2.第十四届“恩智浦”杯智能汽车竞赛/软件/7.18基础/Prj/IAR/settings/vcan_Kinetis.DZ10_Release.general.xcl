@@ -1,0 +1,17 @@
+"E:\越野车\智能车队\IAR\IAR1\arm\bin\armproc.dll" 
+
+"E:\越野车\智能车队\IAR\IAR1\arm\bin\armjlink2.dll" 
+
+"E:\越野车\最终程序\Prj\IAR\DZ10_Release\Exe\vcan_Kinetis.out" 
+
+--plugin "E:\越野车\智能车队\IAR\IAR1\arm\bin\armbat.dll" 
+
+--device_macro "E:\越野车\智能车队\IAR\IAR1\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro "E:\越野车\智能车队\IAR\IAR1\arm\config\debugger\NXP\Kxx_Trace.dmac" 
+
+--flash_loader "E:\越野车\智能车队\IAR\IAR1\arm\config\flashloader\Freescale\FlashK60Xxxx.board" 
+
+
+
+
